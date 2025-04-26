@@ -1,4 +1,3 @@
-// Declare global variables to store lists of users, playgrounds, and reservations
 var usersList = [];
 var playgroundsList = [];
 var reservationsList = [];
@@ -7,10 +6,8 @@ let cardsContainer = document.querySelector("#cardsContainer");
 let row = document.querySelector("#rowData");
 let searchbtn = document.querySelector("#searchbtn");
 
-// Event listener for search input field
 document.querySelector("#searchInput").addEventListener("input", handleSearchAndFilter);
 
-// Initialize XMLHttpRequest to fetch data from JSON file
 let data;
 let https = new XMLHttpRequest();
 https.onreadystatechange = function() {
@@ -23,16 +20,17 @@ https.onreadystatechange = function() {
     displayPlaygroundsList(playgroundsList);
   }
 };
+
 https.open("GET", "../assests/data.json");
 https.send();
 
-// Function to display playgrounds list in cards format
+// --- Functions related to displaying the playground list ---
 function displayPlaygroundsList(currentPlaygrounds) {
   row.innerHTML = "";
   cardsContainer.innerHTML = "";
 
   currentPlaygrounds.forEach(pg => {
-    let type = `${pg.numberOfPlayers / 2} A Side`; // Calculate type based on number of players
+    let type = `${pg.numberOfPlayers / 2} A Side`;
     let card = document.createElement("div");
     card.classList.add("card");
 
@@ -47,7 +45,6 @@ function displayPlaygroundsList(currentPlaygrounds) {
       </div>
     `;
 
-    // Add event listener for "View Details" button
     card.querySelector(".details-btn").addEventListener("click", () => {
       getPlaygroundDetails(pg.id);
     });
@@ -56,7 +53,11 @@ function displayPlaygroundsList(currentPlaygrounds) {
   });
 }
 
-// Function to display details of a specific playground
+function getPlaygroundDetails(id) {
+  let playground = data.playgrounds.find(pg => pg.id == id);
+  displayPlaygroundDetails(playground);
+}
+
 function displayPlaygroundDetails(pg) {
   cardsContainer.innerHTML = "";
   document.querySelector(".filters").style.display = "none";
@@ -93,34 +94,35 @@ function displayPlaygroundDetails(pg) {
 
       <div class="price-booking-row">
         <p class="price">Price: ${pg.price}</p>
+
         <select id="available-hours">
           <option value="" disabled selected>Available Hours</option>
         </select>
+
         <button class="book-btn">Book</button>
       </div>
     </div>
   `;
 
   row.innerHTML = temp;
-  controlAvailableHours(pg); // Control available hours for booking
 
+  controlAvailableHours(pg);
   document.querySelector(".book-btn").addEventListener("click", function() {
     let selectedHour = document.getElementById("available-hours").value;
     if (selectedHour) {
       bookPlayground(pg.id, [parseInt(selectedHour)]);
-      displayBookings(); // Update booking list after booking
+      displayBookings();
     } else {
       alert("Please select an available hour before booking!");
     }
   });
 }
 
-// Function to control available hours for booking
+// --- Functions related to booking and available hours ---
 function controlAvailableHours(playground) {
   let select = document.getElementById("available-hours");
   select.innerHTML = `<option value="" disabled selected>Choose Hour</option>`;
 
-  // Loop through hours and create option elements for available hours
   for (let hour = 0; hour <= 24; hour++) {
     let option = document.createElement("option");
     option.value = hour;
@@ -147,7 +149,6 @@ function controlAvailableHours(playground) {
   });
 }
 
-// Function to book a playground at a specific hour
 function bookPlayground(id, hours) {
   var playground = playgroundsList.find(ele => ele.id == id);
 
@@ -165,7 +166,7 @@ function bookPlayground(id, hours) {
   reservationsList.push(reservation);
 }
 
-// Function to display a list of bookings for the user
+// --- Functions related to displaying bookings ---
 function displayBookings() {
   row.innerHTML = "";
   cardsContainer.innerHTML = "";
@@ -200,7 +201,7 @@ function displayBookings() {
   });
 }
 
-// Search function to filter playgrounds by name and city
+// --- Functions related to search and filters ---
 function search(query) {
   if (query !== "") {
     const cityResult = cityFilter(query);
@@ -212,25 +213,22 @@ function search(query) {
     });
     return Array.from(map.values());
   } else {
-    return playgroundsList;
+    return playgroundsList; 
   }
 }
 
-// Filter playgrounds by city name
 function cityFilter(cityName) {
   return playgroundsList.filter(function(playground) {
     return playground.city.toLowerCase().includes(cityName.toLowerCase());
   });
 }
 
-// Filter playgrounds by name
 function nameFilter(name) {
   return playgroundsList.filter(function(playground) {
     return playground.name.toLowerCase().includes(name.toLowerCase());
   });
 }
 
-// Set up the city filter options
 function controlFilter() {
   let cities = ["Cairo", "Fayoum", "Giza"];
   let cityFilter = document.getElementById("cityFilter");
@@ -243,7 +241,6 @@ function controlFilter() {
   });
 }
 
-// Handle search and filter functionality
 function handleSearchAndFilter() {
   const searchValue = document.getElementById("searchInput").value.trim().toLowerCase();
   const selectedCity = document.getElementById("cityFilter").value.toLowerCase();
@@ -256,5 +253,5 @@ function handleSearchAndFilter() {
     );
   }
 
-  displayPlaygroundsList(filteredPlaygrounds); // Display filtered playgrounds
+  displayPlaygroundsList(filteredPlaygrounds);
 }
