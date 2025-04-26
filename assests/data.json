@@ -1,0 +1,199 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "phone": "01111155566"
+    },
+    {
+      "id": 2,
+      "name": "Bob Smith",
+      "email": "bob@example.com",
+      "phone": "01111155566"
+    },
+    {
+      "id": 3,
+      "name": "Charlie Davis",
+      "email": "charlie@example.com",
+      "phone": "01111155566"
+    }
+  ],
+  "playgrounds": [
+    {
+      "id": 1,
+      "imageUrl": "images/green-park.jpg",
+      "name": "Green Park",
+      "city": "Cairo",
+      "address": "25 Tahrir Square, Downtown Cairo",
+      "numberOfPlayers": 14,
+      "price": 300,
+      "about": "Spacious field suitable for football and training.",
+      "reservedHours": [ 10, 11, 14 ]
+    },
+    {
+      "id": 2,
+      "imageUrl": "images/nile-sports.jpg",
+      "name": "Nile Sports Ground",
+      "city": "Cairo",
+      "address": "88 Corniche St, Garden City",
+      "numberOfPlayers": 10,
+      "price": 220,
+      "about": "River-side pitch perfect for 5-a-side matches.",
+      "reservedHours": [ 8, 10, 16 ]
+    },
+    {
+      "id": 3,
+      "imageUrl": "images/fayoum-club.jpg",
+      "name": "Fayoum Club Pitch",
+      "city": "Fayoum",
+      "address": "22 Club Road, Central Fayoum",
+      "numberOfPlayers": 12,
+      "price": 240,
+      "about": "Standard turf pitch located in the heart of Fayoum.",
+      "reservedHours": [ 11, 15 ]
+    },
+    {
+      "id": 4,
+      "imageUrl": "images/skyline-field.jpg",
+      "name": "Skyline Field",
+      "city": "Cairo",
+      "address": "200 Skyline Rd, New Cairo",
+      "numberOfPlayers": 12,
+      "price": 250,
+      "about": "A modern pitch with city skyline view, great for friendly matches.",
+      "reservedHours": [ 8, 12, 16 ]
+    },
+    {
+      "id": 5,
+      "imageUrl": "images/giza-horizon.jpg",
+      "name": "Giza Horizon Ground",
+      "city": "Giza",
+      "address": "45 Pyramid Rd, Giza",
+      "numberOfPlayers": 10,
+      "price": 250,
+      "about": "Compact turf ground with night lighting.",
+      "reservedHours": [ 9, 13 ]
+    },
+    {
+      "id": 6,
+      "imageUrl": "images/giza-stadium.jpg",
+      "name": "Giza Stadium Mini",
+      "city": "Giza",
+      "address": "1 Pyramid Lane, Near Sphinx",
+      "numberOfPlayers": 14,
+      "price": 350,
+      "about": "Well-maintained turf with pyramid view.",
+      "reservedHours": [ 9, 12, 18 ]
+    },
+    {
+      "id": 7,
+      "imageUrl": "images/sunset-field.jpg",
+      "name": "Sunset Field",
+      "city": "Fayoum",
+      "address": "45 Oasis Road, Fayoum West",
+      "numberOfPlayers": 14,
+      "price": 200,
+      "about": "Ideal for evening games with beautiful sunset views.",
+      "reservedHours": [ 17, 18 ]
+    },
+    {
+      "id": 8,
+      "imageUrl": "images/oasis-arena.jpg",
+      "name": "Oasis Arena",
+      "city": "Fayoum",
+      "address": "7 Desert Road, East Oasis",
+      "numberOfPlayers": 10,
+      "price": 260,
+      "about": "Desert-edge pitch with modern amenities.",
+      "reservedHours": [ 10, 13, 17 ]
+    },
+    {
+      "id": 9,
+      "imageUrl": "images/cleopatra-turf.jpg",
+      "name": "Cleopatra Turf",
+      "city": "Giza",
+      "address": "3 Cleopatra Blvd, Giza Center",
+      "numberOfPlayers": 12,
+      "price": 230,
+      "about": "Compact field, perfect for training drills.",
+      "reservedHours": [ 8, 15 ]
+    },
+    {
+      "id": 10,
+      "imageUrl": "images/city-kickoff.jpg",
+      "name": "City Kickoff",
+      "city": "Cairo",
+      "address": "100 ElTahrir St, Dokki",
+      "numberOfPlayers": 10,
+      "price": 180,
+      "about": "Affordable and accessible for quick matches.",
+      "reservedHours": [ 14 ]
+    },
+    {
+      "id": 11,
+      "imageUrl": "images/downtown-goal.jpg",
+      "name": "Downtown Goal",
+      "city": "Cairo",
+      "address": "55 Ramses Street, Downtown",
+      "numberOfPlayers": 14,
+      "price": 280,
+      "about": "Located in the heart of Cairo, always buzzing.",
+      "reservedHours": [ 9, 16, 18 ]
+    },
+    {
+      "id": 12,
+      "imageUrl": "images/valley-pitch.jpg",
+      "name": "Valley Pitch",
+      "city": "Fayoum",
+      "address": "12 Valley Rd, Green Zone",
+      "numberOfPlayers": 10,
+      "price": 310,
+      "about": "Spacious valley pitch, popular for tournaments.",
+      "reservedHours": [ 10, 12 ]
+    },
+    {
+      "id": 13,
+      "imageUrl": "images/zamalek-club.jpg",
+      "name": "Zamalek Club Turf",
+      "city": "Cairo",
+      "address": "77 Gezira Island, Zamalek",
+      "numberOfPlayers": 14,
+      "price": 320,
+      "about": "High-quality turf used by local clubs.",
+      "reservedHours": [ 9, 11, 15 ]
+    },
+    {
+      "id": 14,
+      "imageUrl": "images/giza-goal.jpg",
+      "name": "Giza Goal Zone",
+      "city": "Giza",
+      "address": "33 Victory Rd, West Giza",
+      "numberOfPlayers": 10,
+      "price": 290,
+      "about": "Great lighting and smooth turf surface.",
+      "reservedHours": [ 10, 14, 18 ]
+    },
+    {
+      "id": 15,
+      "imageUrl": "images/sunrise-ground.jpg",
+      "name": "Sunrise Ground",
+      "city": "Fayoum",
+      "address": "6 Sunrise Blvd, New Town",
+      "numberOfPlayers": 10,
+      "price": 210,
+      "about": "Perfect for early risers and quick games.",
+      "reservedHours": [ 7, 8 ]
+    }
+
+
+  ],
+  "reservations": [
+    {
+      "reservationId": 1,
+      "playgroundId": 2,
+      "userId": 1,
+      "reservedHours": [ 16 ]
+    }
+  ]
+}

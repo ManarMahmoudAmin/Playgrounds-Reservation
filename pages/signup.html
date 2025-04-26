@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/validation.css">
+    <link rel="icon" href="../assests/images/ball-icon.png" type="image/png">
+    <title>Sign up</title>
+</head>
+<body>
+  <div id="navbar-container"></div>
+
+
+  <div class="parent">
+    <div class="container">
+      <div class="overlay"></div> 
+          <h2>Sign Up</h2>
+          <form action="" id="signupForm" target="_blank" method="post">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="example@example.com" />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="text" id="phone" name="phone" minlength="11" maxlength="11" required placeholder="01xxxxxxxxx" />
+            </div>
+
+            <div class="form-group">
+              <label id="password" for="password">Password</label>
+              <input type="password" id="password" name="password" minlength="5" maxlength="20" required placeholder="Enter your password"/>
+            </div>
+
+            <div class="form-group">
+              <label for="Confirm password">Confirm Password</label>
+              <input type="password" id="confirmPassword" name="Confirm password" minlength="5" maxlength="20" required placeholder="Retype your password"/>
+            </div>
+
+            <button id="save" type="submit">Sign Up</button>
+            
+            <div class="extra-links">
+              <p>Already have an account? <a href="signin.html">Log in here</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    <script src="../js/navbar.js"></script>    
+    <script src="/JS/validation.js"></script>
+</body>
+</html>

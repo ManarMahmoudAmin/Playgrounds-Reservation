@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/validation.css">
+  <link rel="icon" href="../assests/images/ball-icon.png" type="image/png">
+  <title>Sign in</title>
+</head>
+<body>
+
+  <div id="navbar-container"></div>
+
+  <div class="parent">
+    <div class="container">
+      <div class="overlay"></div> 
+      <h2>Login</h2>
+      <form action="" method="post">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required placeholder="Enter user name"/>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="text" id="phone" name="phone" minlength="11" maxlength="11" required placeholder="01xxxxxxxxx" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" minlength="5" maxlength="20" required placeholder="Enter your password"/>
+        </div>
+        <button type="submit">Sign In</button>
+        <div class="extra-links">
+          <p><a href="#">Forgot password?</a></p>
+          <p><a href="signup.html">Create an account</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+<script src="../js/navbar.js"></script>    
+</body>
+</html>
