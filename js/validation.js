@@ -15,25 +15,3 @@
   
 // })
 
-
-let passwordValue = document.getElementById("password").value;
-let confirmPasswordValue = document.getElementById("confirmPassword").value;
-
-if (passwordValue !== confirmPasswordValue) {
-    alert("Passwords do not match.");
-} else {
-    alert("Signup successful!");
-}
-
-let r = document.getElementById("save");
-r.addEventListener("click", function (event) {
-    event.preventDefault();
-    let passwordValue = document.getElementById("password").value;
-    let confirmPasswordValue = document.getElementById("confirmPassword").value;
-    if (passwordValue !== confirmPasswordValue) {
-        alert("Passwords do not match.");
-    } else {
-        alert("Signup successful!");
-    }
-});
-

@@ -22,23 +22,22 @@ body {
   background: rgba(0, 0, 0, 0.5);
   z-index: -1;
 }
+
 .content {
   position: relative;
-  z-index: 2; 
+  z-index: 2;
   text-align: center;
   color: white;
   padding: 100px 20px;
 }
 
-
-.parent{
+.parent {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
-.a{
+.a {
   color: #fafbfd;
   text-decoration: none;
   font-size: 1.3rem;
@@ -48,17 +47,17 @@ body {
 .container {
   background-color: #fff;
   padding: 2rem;
-  border-radius: 15px; 
+  border-radius: 15px;
   box-shadow: 0 15px 16px rgba(0, 0, 0, 0.2);
   width: 100%;
   max-width: 450px;
-  margin: 50px 60px ;
+  margin: 50px 60px;
 }
 
 .container h2 {
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #333; 
+  color: #333;
 }
 
 .form-group {
@@ -79,7 +78,6 @@ input[type="text"], input[type="password"], input[type="email"] {
   border-radius: 8px;
   transition: background-color 0.3s ease;
 }
-
 
 button {
   width: 100%;
@@ -110,4 +108,115 @@ button:hover {
 
 .extra-links a:hover {
   color:  #219150;
+}
+
+
+@media (max-width: 1024px) {
+  .container {
+    margin: 20px;
+    padding: 1.5rem;
+  }
+
+  .content {
+    padding: 80px 20px;
+  }
+
+  .parent {
+    flex-direction: column;
+  }
+
+  .a {
+    font-size: 1.2rem;
+  }
+
+  .container h2 {
+    font-size: 1.8rem;
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+
+  input[type="text"], input[type="password"], input[type="email"], button {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+
+  .extra-links a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 15px;
+    padding: 1rem;
+  }
+
+  .content {
+    padding: 60px 20px;
+  }
+
+  .container h2 {
+    font-size: 1.5rem;
+  }
+
+  .parent {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .a {
+    font-size: 1rem;
+  }
+
+  label {
+    font-size: 0.8rem;
+  }
+
+  input[type="text"], input[type="password"], input[type="email"], button {
+    font-size: 0.8rem;
+    padding: 0.6rem;
+  }
+
+  .extra-links a {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 10px;
+    padding: 0.8rem;
+  }
+
+  .content {
+    padding: 50px 20px;
+  }
+
+  .container h2 {
+    font-size: 1.4rem;
+  }
+
+  .parent {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .a {
+    font-size: 0.9rem;
+  }
+
+  label {
+    font-size: 0.75rem;
+  }
+
+  input[type="text"], input[type="password"], input[type="email"], button {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  .extra-links a {
+    font-size: 0.75rem;
+  }
 }
