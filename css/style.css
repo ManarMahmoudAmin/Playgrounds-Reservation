@@ -59,7 +59,7 @@
   flex-grow: 1;
   flex-shrink: 1;
   max-width: 33%;
-  min-width: 350px;
+  min-width: 300px;
 }
 
 .card:hover {

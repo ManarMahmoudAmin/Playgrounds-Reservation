@@ -1,4 +1,5 @@
 window.onload = function () {
+  let navbarContainer = document.getElementById('navbar-container');
   let currentPath = window.location.pathname;
   let isProtectedPage = currentPath.includes('profile.html') || currentPath.includes('bookings.html');
 
@@ -6,51 +7,55 @@ window.onload = function () {
     localStorage.setItem('isLoggedIn', 'true');
   }
 
-  let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-
-  document.getElementById('navbar-container').innerHTML = `
+  let navbarHTML = `
     <nav class="navbar">
-        <a href="../../index.html" class="logo">GameSpot</a>
-        <div class="nav-links">
-            <a href="../pages/signup.html" id="registerLink" class="nav-link">Register</a>
-            <a href="../pages/signin.html" id="signinLink" class="nav-link">Sign In</a>
-            <a href="../pages/bookings.html" id="bookingsLink" class="nav-link" style="display:none;">Bookings</a>
-            <a href="../pages/profile.html" id="profileLink" class="nav-link" style="display:none;">Profile</a>
-            <a href="../pages/home.html" id="logoutLink" class="nav-link" style="display:none;">Logout</a>
-        </div>
+      <a href="../../index.html" class="logo">GameSpot</a>
+      <div class="nav-links">
+        <a href="../pages/signup.html" id="registerLink" class="nav-link">Register</a>
+        <a href="../pages/signin.html" id="signinLink" class="nav-link">Sign In</a>
+        <a href="../pages/bookings.html" id="bookingsLink" class="nav-link" style="display:none;">Bookings</a>
+        <a href="../pages/profile.html" id="profileLink" class="nav-link" style="display:none;">Profile</a>
+        <a href="../pages/home.html" id="logoutLink" class="nav-link" style="display:none;">Logout</a>
+      </div>
     </nav>
   `;
 
+  navbarContainer.innerHTML = navbarHTML;
+
   let navbar = document.querySelector('.navbar');
+  let registerLink = document.getElementById('registerLink');
+  let signinLink = document.getElementById('signinLink');
+  let bookingsLink = document.getElementById('bookingsLink');
+  let profileLink = document.getElementById('profileLink');
+  let logoutLink = document.getElementById('logoutLink');
 
   function updateNavbar() {
-    let isLoggedInNow = localStorage.getItem('isLoggedIn') === 'true';
+    let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
-    if (isLoggedInNow) {
+    if (isLoggedIn) {
       navbar.classList.add('logged-in');
-      document.getElementById('bookingsLink').style.display = 'inline';
-      document.getElementById('profileLink').style.display = 'inline';
-      document.getElementById('logoutLink').style.display = 'inline';
-      document.getElementById('registerLink').style.display = 'none';
-      document.getElementById('signinLink').style.display = 'none';
+      bookingsLink.style.display = 'inline';
+      profileLink.style.display = 'inline';
+      logoutLink.style.display = 'inline';
+      registerLink.style.display = 'none';
+      signinLink.style.display = 'none';
     } else {
       navbar.classList.remove('logged-in');
-      document.getElementById('bookingsLink').style.display = 'none';
-      document.getElementById('profileLink').style.display = 'none';
-      document.getElementById('logoutLink').style.display = 'none';
-      document.getElementById('registerLink').style.display = 'inline';
-      document.getElementById('signinLink').style.display = 'inline';
+      bookingsLink.style.display = 'none';
+      profileLink.style.display = 'none';
+      logoutLink.style.display = 'none';
+      registerLink.style.display = 'inline';
+      signinLink.style.display = 'inline';
     }
   }
 
-  document.getElementById('logoutLink').addEventListener('click', function (e) {
-    e.preventDefault(); // to prevent the redirection behavior
+  logoutLink.addEventListener('click', function (e) {
+    e.preventDefault(); 
     localStorage.setItem('isLoggedIn', 'false');
-    updateNavbar();
     window.location.href = '../../index.html';
   });
 
-  document.getElementById('signinLink').addEventListener('click', function () {
+  signinLink.addEventListener('click', function () {
     localStorage.setItem('isLoggedIn', 'true');
     updateNavbar();
   });
