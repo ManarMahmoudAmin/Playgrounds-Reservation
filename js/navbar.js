@@ -13,8 +13,6 @@ window.onload = function () {
       <div class="nav-links">
         <a href="../pages/signup.html" id="registerLink" class="nav-link">Register</a>
         <a href="../pages/signin.html" id="signinLink" class="nav-link">Sign In</a>
-        <a href="../pages/bookings.html" id="bookingsLink" class="nav-link" style="display:none;">Bookings</a>
-        <a href="../pages/profile.html" id="profileLink" class="nav-link" style="display:none;">Profile</a>
         <a href="../pages/home.html" id="logoutLink" class="nav-link" style="display:none;">Logout</a>
       </div>
     </nav>
@@ -25,8 +23,8 @@ window.onload = function () {
   let navbar = document.querySelector('.navbar');
   let registerLink = document.getElementById('registerLink');
   let signinLink = document.getElementById('signinLink');
-  let bookingsLink = document.getElementById('bookingsLink');
-  let profileLink = document.getElementById('profileLink');
+  // let bookingsLink = document.getElementById('bookingsLink');
+  // let profileLink = document.getElementById('profileLink');
   let logoutLink = document.getElementById('logoutLink');
 
   function updateNavbar() {
@@ -34,15 +32,13 @@ window.onload = function () {
 
     if (isLoggedIn) {
       navbar.classList.add('logged-in');
-      bookingsLink.style.display = 'inline';
-      profileLink.style.display = 'inline';
+      // profileLink.style.display = 'inline';
       logoutLink.style.display = 'inline';
       registerLink.style.display = 'none';
       signinLink.style.display = 'none';
     } else {
       navbar.classList.remove('logged-in');
-      bookingsLink.style.display = 'none';
-      profileLink.style.display = 'none';
+      // profileLink.style.display = 'none';
       logoutLink.style.display = 'none';
       registerLink.style.display = 'inline';
       signinLink.style.display = 'inline';

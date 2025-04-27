@@ -9,7 +9,7 @@ document.querySelector("#searchInput").addEventListener("input", handleSearchAnd
 var cardsContainer = document.querySelector("#cardsContainer");
 var row = document.querySelector("#rowData");
 var searchbtn = document.querySelector("#searchbtn");
-
+var filter = document.querySelector(".filters");
 if (localStorage.getItem("playgroundsList")){
   loadFromLocalStorage();
   controlFilter();
@@ -197,7 +197,7 @@ function bookPlayground(id, hours) {
 function displayBookings() {
   row.innerHTML = "";
   cardsContainer.innerHTML = "";
-
+  filter.innerHTML = "";
   let title = document.createElement("h2");
   title.textContent = "My Bookings";
   title.classList.add("bookings-title");
@@ -227,7 +227,10 @@ function displayBookings() {
     cardsContainer.appendChild(bookingCard);
   });
 }
-
+document.querySelector("#booking-btn").addEventListener(
+  "click",
+  displayBookings
+)
 function search(query) {
   if (query !== "") {
     const cityResult = cityFilter(query);

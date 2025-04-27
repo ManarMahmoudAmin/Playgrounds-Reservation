@@ -20,6 +20,18 @@
         window.location.href = 'signin.html';
       }
     </script> -->
+    <script>
+      window.onload = function() {
+        const userId = localStorage.getItem("userId");
+        if (userId) {
+          displayBookings(userId);
+        } else {
+          alert("No user logged in! Redirecting...");
+          // Optional redirect if you have a login page
+          // window.location.href = "signin.html";
+        }
+      };
+    </script>
     
     <script src="../js/navbar.js"></script>
     <script src="../js/script.js"></script>    

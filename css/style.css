@@ -288,6 +288,22 @@ ul li {
     width: 100%; 
   }
 }
+#booking-btn {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+#booking-btn {
+  background-color: #219150;
+}
 
 @media (max-width: 480px) {
   .container {
