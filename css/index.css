@@ -92,6 +92,7 @@ body {
     padding: 40px 0 0 5%; 
     flex-direction: column;
     align-items: center;
+    padding-top: 6rem;
   }
 
   .content {
