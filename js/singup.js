@@ -1,52 +1,5 @@
 document.querySelector('form').addEventListener('submit', function(e) {
     e.preventDefault();
-    // Clear previous error messages
-    document.querySelectorAll('.error-message').forEach(msg => msg.remove());
-    
-    // Get form elements
-    const username = document.getElementById('username');
-    const phone = document.getElementById('phone');
-    const password = document.getElementById('password');
-    let isValid = true;
-
-    // Username validation
-    if (username.value.trim().length < 5) {
-        isValid = false;
-        showError(username, 'Username must be at least 5 characters');
-    }
-
-    // Phone validation
-    const phoneRegex = /^01[0125]\d{8}$/;
-    if (!phoneRegex.test(phone.value.trim())) {
-        isValid = false;
-        showError(phone, 'Invalid Egyptian phone number (01XXXXXXXXX)');
-    }
-
-    // Password validation
-    if (password.value.length < 5 || password.value.length > 20) {
-        isValid = false;
-        showError(password, 'Password must be 5-20 characters long');
-    }
-
-    if (isValid) {
-        // Here you should proceed to authentication or form submit
-        console.log("Login form valid ✅");
-        // this.submit();  // Uncomment if you want actual submission
-    }
-});
-
-function showError(input, message) {
-    const error = document.createElement('div');
-    error.className = 'error-message';
-    error.style.color = 'red';
-    error.style.fontSize = '0.8rem';
-    error.style.marginTop = '5px';
-    error.textContent = message;
-    input.parentNode.appendChild(error);
-}
-
-document.getElementById('signupForm').addEventListener('submit', function(e) {
-    e.preventDefault();
     let errors = [];
 
     // Remove previous error messages

@@ -47,6 +47,7 @@ window.onload = function () {
 
   logoutLink.addEventListener('click', function (e) {
     e.preventDefault(); 
+    localStorage.setItem('currentUser', null);
     localStorage.setItem('isLoggedIn', 'false');
     window.location.href = '../../index.html';
   });

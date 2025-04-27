@@ -4,7 +4,7 @@ var playgroundsList = [];
 var reservationsList = [];
 var data;
 var userId;
-var isLoggedIn
+var isLoggedIn;
 // catching elements  //
 document.querySelector("#searchInput").addEventListener("input", handleSearchAndFilter);
 var cardsContainer = document.querySelector("#cardsContainer");
@@ -50,7 +50,11 @@ function loadFromLocalStorage(){
 function displayPlaygroundsList(currentPlaygrounds) {
   row.innerHTML = "";
   cardsContainer.innerHTML = "";
-
+  var bookingButton = document.querySelector("#booking-btn");
+  if (localStorage.getItem("isLoggedIn") !== "true"){
+    bookingButton.style.display = "none";
+  }
+  
   currentPlaygrounds.forEach(pg => {
     let type = `${pg.numberOfPlayers / 2} A Side`;
     let card = document.createElement("div");
@@ -196,6 +200,9 @@ function bookPlayground(id, hours) {
 
 // --- Functions related to displaying bookings ---
 function displayBookings() {
+  if (localStorage.getItem("currentUser")){
+    console.log("it is logged in")
+  }
   row.innerHTML = "";
   cardsContainer.innerHTML = "";
   filter.innerHTML = "";
