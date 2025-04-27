@@ -72,6 +72,10 @@ body {
 }
 
 @media (max-width: 768px) {
+  body {
+    padding-top: 100px; /* أو القيمة اللي تناسب ارتفاع الـ navbar لما بيكبر */
+  }
+  
   .navbar {
     padding: 15px 20px;
   }

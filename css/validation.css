@@ -115,6 +115,7 @@ button:hover {
   .container {
     margin: 20px;
     padding: 1.5rem;
+    padding-top: 2.5rem;
   }
 
   .content {
@@ -151,6 +152,7 @@ button:hover {
   .container {
     margin: 15px;
     padding: 1rem;
+    padding-top: 5rem;
   }
 
   .content {
