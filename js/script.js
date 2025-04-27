@@ -3,7 +3,8 @@ var usersList = [];
 var playgroundsList = [];
 var reservationsList = [];
 var data;
-
+var userId;
+var isLoggedIn
 // catching elements  //
 document.querySelector("#searchInput").addEventListener("input", handleSearchAndFilter);
 var cardsContainer = document.querySelector("#cardsContainer");
